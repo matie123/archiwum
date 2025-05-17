@@ -1,20 +1,6 @@
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="@vite('resources/css/app.css')">
-    <title>Archiwum | Rejestracja</title>
-</head>
-<body>
-    <nav class="flex flex-row">
-        <a href="/"><h1 class="text-3xl">Archiwum</h1></a>
-        <div class="ml-auto">
-            <a href="/login"><button class="bg-slate-900 hover:bg-slate-800">Zaloguj się</button></a>
-            <a href="/register"><button class="bg-slate-900 hover:bg-slate-800">Zarejestruj się</button></a>
-        </div>
-    </nav>
-    <main>
+@section('title', 'Archiwum | Rejestracja');
+@section('description', 'Zarejestruj się w Archiwum, aby uzyskać dostęp do wszystkich funkcji serwisu. Wypełnij formularz rejestracyjny i dołącz do naszej społeczności.');
+@section('keywords', 'rejestracja, konto, archiwum, dostęp, funkcje, serwis, społeczność')
+<x-layout>
         <h1>Rejestracja</h1>
-    </main>
-</body>
-</html>
+</x-layout>
