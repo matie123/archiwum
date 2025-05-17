@@ -4,13 +4,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
         $files = [
-        ["name" => "Książka kucharska anarchisty",
+        ["name" => "Książka kucharska anarchisty.pdf",
          "description"=>"Jak sama nazwa wskazuje", 
          "author" => "Matierych",
          "id" => 1],
-        ["name" => "Zrewizjowana czarna księga - przewodnik materiałów wybuchowych produkowanych polowo",
+        ["name" => "Zrewizjowana czarna księga - przewodnik materiałów wybuchowych produkowanych polowo.pdf",
          "description"=>"Interesująca księga", 
          "author" => "Matierych",
+         "id" => 2],
+        ["name" => "Hymn_Niemiec.mp4",
+         "description"=>"Mój ulubiony utwór", 
+         "author" => "Donäld Tüßk",
          "id" => 2]
     ];
     
