@@ -1,6 +1,7 @@
-@section('title', 'Archiwum | Plik');
-@section('description', 'Szczegóły pliku w Archiwum. Zobacz informacje o pliku, jego opisie i autorze.')
-@section('keywords', 'plik, archiwum, szczegóły, opis, autor, informacje')
-<x-layout>
+<x-layout 
+    title="Archiwum | Plik"
+    description="Szczegóły pliku w Archiwum. Pobierz lub przeglądaj plik, aby uzyskać więcej informacji. Skorzystaj z naszych zasobów."
+    keywords="plik, szczegóły, archiwum, pobieranie, przeglądanie, zasoby"
+>
         <h1>Plik</h1>
 </x-layout>

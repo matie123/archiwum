@@ -1,6 +1,7 @@
-@section('title', 'Archiwum | Rejestracja');
-@section('description', 'Zarejestruj się w Archiwum, aby uzyskać dostęp do wszystkich funkcji serwisu. Wypełnij formularz rejestracyjny i dołącz do naszej społeczności.');
-@section('keywords', 'rejestracja, konto, archiwum, dostęp, funkcje, serwis, społeczność')
-<x-layout>
+<x-layout 
+    title="Archiwum | Rejestracja"
+    description="Zarejestruj się w Archiwum, aby uzyskać dostęp do wszystkich funkcji serwisu. Wprowadź swoje dane rejestracyjne, aby kontynuować."
+    keywords="rejestracja, konto, archiwum, dostęp, funkcje, serwis"
+>
         <h1>Rejestracja</h1>
 </x-layout>
