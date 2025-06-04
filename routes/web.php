@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Models\File;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
 Route::get('/', function () {
@@ -79,3 +80,24 @@ Route::post('addFile/push', function (Request $request) {
 
     return redirect('/')->with('success', 'Plik został dodany!');
 })->name('addFile.push');
+
+Route::post('/files/{id}/comment', function (Request $request, $id) {
+    $validated = $request->validate([
+        'title' => 'nullable|string|max:255',
+        'content' => 'required|string|max:2000',
+    ], [
+        'content.required' => 'Treść komentarza jest wymagana.',
+        'content.max' => 'Komentarz może mieć maksymalnie 2000 znaków.',
+        'title.max' => 'Tytuł może mieć maksymalnie 255 znaków.'
+    ]);
+    if (!Auth::check()) {
+        return redirect()->back()->withErrors(['auth' => 'Musisz być zalogowany, aby dodać komentarz.']);
+    }
+    Comment::create([
+        'title' => $validated['title'] ?? null,
+        'content' => $validated['content'],
+        'user_id' => Auth::id(),
+        'file_id' => $id,
+    ]);
+    return redirect()->back()->with('success', 'Komentarz został dodany!');
+})->name('comment.push');
